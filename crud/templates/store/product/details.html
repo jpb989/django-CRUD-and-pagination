@@ -1,0 +1,28 @@
+{% extends "store/base.html" %}
+
+{% block title %}Product Details{% endblock title %}
+
+{% block container %}
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title">Product Details #{{ product.id }}</h5>
+    </div>
+    <div class='class-body'>
+        <div class='body'>
+            <dl class='row'>
+                <dt class='col-sm-3'>Product Name</dt>
+                <dd class='col-sm-9'>{{ product.name }}</dd>
+
+                <dt class='col-sm-3'>Product Description</dt>
+                <dd class='col-sm-9'>{{ product.description }}</dd>
+
+                <dt class='col-sm-3'>Product Price</dt>
+                <dd class='col-sm-9'>{{ product.price }}</dd>
+
+                <dt class='col-sm-3'>Brand</dt>
+                <dd class='col-sm-9'>{{ product.brand }}</dd>
+            </dl>
+        </div>
+    </div>
+</div>
+{% endblock container %}

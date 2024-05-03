@@ -1,0 +1,20 @@
+{% extends "store/base.html" %}
+
+{% block title %}Delete Product{% endblock title %}
+
+{% block container %}
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title">Delete Product #{{ product.id }}</h5>
+    </div>
+    <div class="card-body">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="alert alert-warning" role="alert">
+                Are you sure you want to delete <strong>{{ product }}</strong>
+            </div>
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+    </div>
+</div>
+{% endblock container %}

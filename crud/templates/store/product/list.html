@@ -1,0 +1,29 @@
+{% extends "store/base.html" %}
+
+{% block title %}Products{% endblock title %}
+
+{% block container %}
+<table class="table">
+    <tr>
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td><a href="{% url 'product-details' pk=product.id %}">{{ product.name }}</a></td>
+                <td>{{ product.price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </tr>
+</table>
+
+{% if is_paginated %}
+    {% include "store/_pagination.html" %}
+{% endif %}
+
+{% endblock container %}
